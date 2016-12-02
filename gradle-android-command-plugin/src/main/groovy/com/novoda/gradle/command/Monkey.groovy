@@ -20,6 +20,9 @@ class Monkey extends AdbTask {
         def arguments = ['shell', 'monkey']
         arguments += ['-p', packageName]
         arguments += getFormattedCategories()
+        if (pluginEx.throttle) {
+            arguments += ['--throttle', pluginEx.throttle]
+        }
         arguments += ['-v', getEvents()]
         if (getSeed()) {
             arguments += ['-s', getSeed()]
