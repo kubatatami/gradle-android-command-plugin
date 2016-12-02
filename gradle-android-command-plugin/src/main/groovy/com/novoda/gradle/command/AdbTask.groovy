@@ -15,6 +15,8 @@ public class AdbTask extends org.gradle.api.DefaultTask {
 
     def deviceId
 
+    def additionalParameters
+
     @Memoized
     def getDeviceId() {
         if (deviceId instanceof Closure)
@@ -36,6 +38,9 @@ public class AdbTask extends org.gradle.api.DefaultTask {
 
     protected assertDeviceAndRunCommand(def parameters) {
         assertDeviceConnected()
+        if (additionalParameters) {
+            parameters.add(additionalParameters)
+        }
         runCommand(parameters)
     }
 
