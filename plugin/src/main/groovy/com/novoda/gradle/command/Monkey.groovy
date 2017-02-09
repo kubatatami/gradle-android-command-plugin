@@ -24,8 +24,8 @@ class Monkey extends AdbTask {
             arguments += ['-s', monkey.seed]
         }
 
-        if (monkey.throtle) {
-            arguments += ['-t', monkey.throtle]
+        if (monkey.throttle) {
+            arguments += ['-t', monkey.throttle]
         }
 
         if (monkey.ignoreCrash) {

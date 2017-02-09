@@ -8,7 +8,7 @@ final class MonkeySpec {
     Integer seed
     Integer throttle
     List<String> categories = []
-    Boolean ignoreCrash;
+    Boolean ignoreCrash
 
     void ignoreCrash(ignoreCrash) {
         this.ignoreCrash = ignoreCrash
