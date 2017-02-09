@@ -6,7 +6,18 @@ final class MonkeySpec {
 
     Integer events
     Integer seed
+    Integer throttle
     List<String> categories = []
+    Boolean ignoreCrash;
+
+    void ignoreCrash(ignoreCrash) {
+        this.ignoreCrash = ignoreCrash
+    }
+
+    void throttle(throttle) {
+        this.throttle = throttle
+    }
+
 
     void events(events) {
         this.events = events
@@ -34,4 +45,13 @@ final class MonkeySpec {
     def getSeed() {
         System.properties['seed'] ?: seed
     }
+
+    def getThrottle() {
+        throttle
+    }
+
+    def getIgnoreCrash() {
+        ignoreCrash
+    }
+
 }

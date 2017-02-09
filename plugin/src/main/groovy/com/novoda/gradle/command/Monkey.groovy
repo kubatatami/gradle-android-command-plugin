@@ -23,6 +23,15 @@ class Monkey extends AdbTask {
         if (monkey.seed) {
             arguments += ['-s', monkey.seed]
         }
+
+        if (monkey.throtle) {
+            arguments += ['-t', monkey.throtle]
+        }
+
+        if (monkey.ignoreCrash) {
+            arguments += ['--ignore-crashes', ""]
+        }
+
         assertDeviceAndRunCommand(arguments)
     }
 }
