@@ -16,6 +16,7 @@ public class AndroidCommandPluginExtension {
     def categories
     def sortBySubtasks
     def throttle
+    def ignoreCrash
     def additionalParameters
 
     private final Project project

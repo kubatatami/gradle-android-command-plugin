@@ -27,6 +27,11 @@ class Monkey extends AdbTask {
         if (getSeed()) {
             arguments += ['-s', getSeed()]
         }
+
+        if (pluginEx.ignoreCrash) {
+            arguments += ['--ignore-crashes', ""]
+        }
+
         assertDeviceAndRunCommand(arguments)
     }
 
